@@ -7,10 +7,12 @@ import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import danhSachPhimSlice from "./redux/danhSachPhimSlice";
 import videoModalSlice from "./redux/videoModalSlice";
+import heThongRapSlice from "./redux/heThongRapSlice";
 export let store = configureStore({
   reducer: {
     danhSachPhimSlice,
     videoModalSlice,
+    heThongRapSlice,
   },
 });
 const root = ReactDOM.createRoot(document.getElementById("root"));

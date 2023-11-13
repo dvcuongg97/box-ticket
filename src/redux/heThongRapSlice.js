@@ -16,7 +16,7 @@ const initialState = {
 };
 
 const heThongRapSlice = createSlice({
-  name: second,
+  name: "heThongRapSlice",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
