@@ -1,0 +1,28 @@
+.div-ten-phim {
+    color: #000;
+    /* height: 45px; */
+    /* display: -webkit-box; */
+    margin-bottom: 7px;
+    overflow: hidden;
+    font-size: 18px;
+    max-height: 45px;
+    visibility: visible;
+    font-weight: 500;
+    line-height: 22px;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.text-detail-phim-h4 {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.235;
+    letter-spacing: 0.00735em;
+    color: #757575;
+    margin-bottom: 7px;
+}
+
+.checked {
+    color: #ffb400;
+}
