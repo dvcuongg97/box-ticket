@@ -2,6 +2,7 @@ import React from "react";
 import DanhSachPhim from "./DanhSachPhim/DanhSachPhim";
 import Banner from "./Banner/Banner";
 import CumRap from "./CumRap/CumRap";
+import TinTuc from "./TinTuc/TinTuc";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <Banner />
       <DanhSachPhim />
       <CumRap />
+      <TinTuc />
     </>
   );
 }
