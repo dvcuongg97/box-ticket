@@ -9,12 +9,14 @@ import danhSachPhimSlice from "./redux/danhSachPhimSlice";
 import videoModalSlice from "./redux/videoModalSlice";
 import heThongRapSlice from "./redux/heThongRapSlice";
 import detailMovieSlice from "./redux/detailMovieSlice";
+import userInfoSlice from "./redux/userInfoSlice";
 export let store = configureStore({
   reducer: {
     danhSachPhimSlice,
     videoModalSlice,
     heThongRapSlice,
     detailMovieSlice,
+    userInfoSlice,
   },
 });
 const root = ReactDOM.createRoot(document.getElementById("root"));
