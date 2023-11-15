@@ -10,6 +10,7 @@ import videoModalSlice from "./redux/videoModalSlice";
 import heThongRapSlice from "./redux/heThongRapSlice";
 import detailMovieSlice from "./redux/detailMovieSlice";
 import userInfoSlice from "./redux/userInfoSlice";
+import datVeSlice from "./redux/datVeSlice";
 export let store = configureStore({
   reducer: {
     danhSachPhimSlice,
@@ -17,6 +18,7 @@ export let store = configureStore({
     heThongRapSlice,
     detailMovieSlice,
     userInfoSlice,
+    datVeSlice,
   },
 });
 const root = ReactDOM.createRoot(document.getElementById("root"));

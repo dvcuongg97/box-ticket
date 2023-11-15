@@ -5,6 +5,7 @@ import Login from "./pages/Login/Login";
 import Layout from "./templates/Layout";
 import UserProfile from "./pages/UserProfile/UserProfile";
 import Register from "./pages/Register/Register";
+import DatVe from "./pages/DatVe/DatVe";
 
 function App() {
   return (
@@ -23,6 +24,14 @@ function App() {
           element={
             <Layout>
               <Detail />
+            </Layout>
+          }
+        />
+        <Route
+          path="/booking/:maLichChieu"
+          element={
+            <Layout>
+              <DatVe />
             </Layout>
           }
         />

@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { clientProfileAPI } from "../services/Api/api";
 
 export const layThongTinTaiKhoanAction = createAsyncThunk(
-  "client/layThongTinTaiKhoanAction",
+  "layThongTinTaiKhoanAction",
   async () => {
     const res = await clientProfileAPI.thongTinTaiKhoan();
     if (res.status === 200) {
