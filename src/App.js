@@ -6,6 +6,7 @@ import Layout from "./templates/Layout";
 import UserProfile from "./pages/UserProfile/UserProfile";
 import Register from "./pages/Register/Register";
 import DatVe from "./pages/DatVe/DatVe";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
           }
         />
         <Route path="/dangky" element={<Register />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

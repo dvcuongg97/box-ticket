@@ -3,6 +3,7 @@ import DanhSachPhim from "./DanhSachPhim/DanhSachPhim";
 import Banner from "./Banner/Banner";
 import CumRap from "./CumRap/CumRap";
 import TinTuc from "./TinTuc/TinTuc";
+import UngDung from "./UngDung/UngDung";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <DanhSachPhim />
       <CumRap />
       <TinTuc />
+      <UngDung />
     </>
   );
 }

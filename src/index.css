@@ -11,3 +11,11 @@ html {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.jss123>div {
+  width: 100%;
+  height: 100%;
+  border-radius: 7%;
+  background-color: #fff;
+}
