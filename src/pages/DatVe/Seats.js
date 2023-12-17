@@ -65,7 +65,7 @@ export default function Seats() {
           padding: "0 5%",
           margin: "0 5%",
         }}
-        className="col-span-2 mb-9 overflow-x-scroll tabCumRap"
+        className="col-span-2 mb-9 overflow-x-scroll scrollbar"
       >
         <div className="relative min-w-[768px] md:w-full md:h-full">
           <div className="flex-col items-center justify-center">

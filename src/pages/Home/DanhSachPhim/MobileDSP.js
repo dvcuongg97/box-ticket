@@ -40,7 +40,7 @@ export default function MobileDSP() {
   };
   return (
     <>
-      <div id="lichChieu" className="container mx-auto mt-6 px-6">
+      <div id="lichChieu" className="container px-6 mt-6 ">
         <p className="uppercase text-xl font-bold text-gray-500 text-center mb-6">
           danh sách phim
         </p>

@@ -26,6 +26,6 @@ const heThongRapSlice = createSlice({
   },
 });
 
-export const {} = heThongRapSlice.actions;
+// export const {} = heThongRapSlice.actions;
 
 export default heThongRapSlice.reducer;

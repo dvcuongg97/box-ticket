@@ -21,7 +21,7 @@ export default function DanhSachPhim() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(layDanhSachPhimAction());
-  }, []);
+  }, [dispatch]);
   return (
     <>
       <Desktop>

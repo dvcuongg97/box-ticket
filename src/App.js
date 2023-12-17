@@ -7,10 +7,12 @@ import UserProfile from "./pages/UserProfile/UserProfile";
 import Register from "./pages/Register/Register";
 import DatVe from "./pages/DatVe/DatVe";
 import NotFound from "./pages/NotFound/NotFound";
+import Spinner from "./components/Spinner/Spinner";
 
 function App() {
   return (
     <BrowserRouter>
+      <Spinner />
       <Routes>
         <Route
           path="/"

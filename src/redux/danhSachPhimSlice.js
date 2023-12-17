@@ -26,6 +26,6 @@ const danhSachPhimSlice = createSlice({
   },
 });
 
-export const {} = danhSachPhimSlice.actions;
+// export const {} = danhSachPhimSlice.actions;
 
 export default danhSachPhimSlice.reducer;
