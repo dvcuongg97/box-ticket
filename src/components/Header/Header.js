@@ -1,31 +1,34 @@
-import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { userLocalStorage } from "../../services/LocalStorage/userLocalStorage";
+import { CloseOutlined, MenuOutlined } from "@ant-design/icons";
 
 export default function Header() {
-  let userLogin = userLocalStorage.get();
-
-  let navigate = useNavigate();
-
-  let handleLogin = () => {
+  const userLogin = userLocalStorage.get();
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const links = [
+    { name: "Lịch Chiếu", link: "#lichChieu" },
+    { name: "Cụm Rạp", link: "#cumRap" },
+    { name: "Tin Tức", link: "#tinTuc" },
+    { name: "Ứng Dụng", link: "#ungDung" },
+  ];
+  const handleLogin = () => {
     navigate("/login");
   };
-
-  let handleLogout = () => {
+  const handleLogout = () => {
     userLocalStorage.remove("USER");
     window.location.reload();
   };
-
-  let handleDangKy = () => {
+  const handleDangKy = () => {
     navigate("/dangky");
   };
-
-  let renderUserLogin = () => {
-    let classBtn =
-      "bg-transparent mr-1 hover:bg-orange-500 text-orange-500 font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded transition duration-500";
+  const renderUserLogin = () => {
+    const classBtn =
+      "bg-transparent ml-3 hover:bg-orange-500 text-orange-500 font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded transition duration-500";
     if (userLogin) {
       return (
-        <div className="md:flex md:items-center">
+        <div className="flex">
           <NavLink to={"/userprofile"}>
             <div className="cursor-pointer flex items-center md:px-2">
               <div className="w-12 h-12 mr-3 md:mb-0 mb-2 hover:scale-110">
@@ -57,93 +60,57 @@ export default function Header() {
       );
     }
   };
-
   return (
-    <>
-      <header>
-        <nav className="bg-white md:opacity-80 shadow-md shadow-black border-gray-200 dark:bg-gray-900 md:fixed z-10  h-82 w-full top-0 left-0">
-          <div className="flex flex-wrap p-[1.5%] items-center justify-between md:p-4">
-            <NavLink to={"/"}>
-              <img
-                style={{ height: 50 }}
-                src="../image/headTixLogo.png"
-                alt="..."
-              />
-            </NavLink>
-            <button
-              data-collapse-toggle="navbar-default"
-              type="button"
-              className="inline-flex items-center mr-[1%] p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-              aria-controls="navbar-default"
-              aria-expanded="false"
-              // style={{
-              //   marginRight: "1%",
-              // }}
-            >
-              <span className="sr-only">Open main menu</span>
-              <svg
-                className="w-5 h-5 text-orange-500"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 17 14"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="{2}"
-                  d="M1 1h15M1 7h15M1 13h15"
-                />
-              </svg>
-            </button>
-            <div
-              className="hidden z-10 bg-white w-full h-auto md:w-auto md:flex md:justify-between md:items-center transition duration-1000"
-              id="navbar-default"
-            >
-              <div className="md:hidden flex justify-center items-center">
-                {renderUserLogin()}
-              </div>
+    <nav className="bg-white md:opacity-80 shadow-md shadow-black md:fixed z-10  h-82 w-full top-0 left-0">
+      <div className="flex items-center justify-between bg-white py-4 px-6 md:px-10">
+        <NavLink to={"/"}>
+          <img
+            style={{ height: 50 }}
+            src="../image/headTixLogo.png"
+            alt="..."
+          />
+        </NavLink>
 
-              <ul className="bg-gray-50 md:bg-white font-medium flex flex-col text-center p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                <li>
-                  <a
-                    href="#lichChieu"
-                    className="block py-2 pl-3 pr-4 text-gray-900 rounded md:bg-transparent md:hover:text-orange-500  md:p-0 dark:text-white md:dark:text-blue-500"
-                  >
-                    Lịch Chiếu
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#cumRap"
-                    className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-500 md:active:text-orange-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                  >
-                    Cụm Rạp
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#tinTuc"
-                    className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-500 md:active:text-orange-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                  >
-                    Tin Tức
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#ungDung"
-                    className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-500 md:active:text-orange-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                  >
-                    Ứng Dụng
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="hidden md:block">{renderUserLogin()}</div>
-          </div>
-        </nav>
-      </header>
-    </>
+        <div onClick={() => setOpen(!open)} className="md:hidden text-2xl">
+          {open ? <CloseOutlined /> : <MenuOutlined />}
+        </div>
+
+        <ul
+          className={`
+            md:flex 
+            md:items-center
+            md:pb-0 
+            pb-12 
+            absolute 
+            md:static 
+            bg-white 
+            md:z-auto 
+            z-10 
+            left-0 
+            w-full 
+            md:w-auto 
+            md:pl-0 
+            pl-9 
+            transition-all 
+            duration-500 
+            ease-in 
+            ${open ? "top-16 " : "top-[-490px]"}`}
+        >
+          {links.map((link) => (
+            <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
+              <a
+                href={link.link}
+                className="text-gray-800 hover:text-gray-400 duration-500"
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
+          {open ? <div className="md:hidden">{renderUserLogin()}</div> : <></>}
+        </ul>
+
+        <div className="hidden md:block">{renderUserLogin()}</div>
+      </div>
+    </nav>
   );
 }
